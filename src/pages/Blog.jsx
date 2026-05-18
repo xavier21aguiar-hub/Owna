@@ -1,4 +1,5 @@
 import { Navigate, useParams } from "react-router-dom";
+import BlogCard from "../components/BlogCard";
 import Sidebar from "../components/Sidebar";
 import { blogs } from "../data/blogs";
 
@@ -11,6 +12,8 @@ function Blog() {
   if (!featuredPost) {
     return <Navigate to="/blog" replace />;
   }
+
+  const relatedPosts = blogs.filter((blog) => blog.slug !== featuredPost.slug);
 
   return (
     <main className="blog-layout">
@@ -30,6 +33,21 @@ function Blog() {
             <p>{section.text}</p>
           </section>
         ))}
+
+        {relatedPosts.length > 0 && (
+          <section className="related-posts">
+            <div className="section-heading">
+              <p className="eyebrow">Sigue leyendo</p>
+              <h2>OTROS ARTICULOS</h2>
+            </div>
+
+            <div className="blog-preview-grid">
+              {relatedPosts.map((blog) => (
+                <BlogCard key={blog.id} blog={blog} />
+              ))}
+            </div>
+          </section>
+        )}
       </section>
 
       <Sidebar />

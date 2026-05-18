@@ -316,6 +316,10 @@ input {
   text-transform: uppercase;
 }
 
+.related-posts {
+  margin-top: 36px;
+}
+
 .blog-sidebar {
   align-self: start;
   padding: 24px;

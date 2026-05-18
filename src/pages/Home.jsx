@@ -29,7 +29,7 @@ function Home() {
         </div>
 
         <div className="blog-preview-grid">
-          {blogs.slice(0, 2).map((blog) => (
+          {blogs.map((blog) => (
             <BlogCard key={blog.id} blog={blog} />
           ))}
         </div>
