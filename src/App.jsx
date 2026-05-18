@@ -12,7 +12,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/blog/:slug" element={<Blog />} />
         <Route path="/collections" element={<Categories />} />
         <Route path="/shop" element={<Categories />} />
         <Route path="/new-in" element={<Categories />} />
