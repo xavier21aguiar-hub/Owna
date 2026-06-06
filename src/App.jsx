@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import ClarityProvider from "./components/ClarityProvider";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -15,7 +14,6 @@ import About from "./pages/About";
 function App() {
   return (
     <div className="app-shell">
-      <ClarityProvider />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
